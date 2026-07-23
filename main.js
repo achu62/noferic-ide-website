@@ -4,6 +4,7 @@
 import { imagePath } from "./img.js";
 import { version } from "./version.js";
 import { news } from "./news.js";
+import { repositoryUrl } from "./repo.js";
 
 const renderVersion = () => {
     const versionValue = document.getElementById("version-value");
@@ -20,7 +21,13 @@ const renderNews = () => {
 
     newsList.innerHTML = news.map((item, index) => `
         <button class="news-item" type="button" data-index="${index}">
-            <h3>${item.heading}</h3>
+            <div class="news-item-topline">
+                <h3>${item.heading}</h3>
+                ${item.date ? `<time datetime="${item.date}">${item.displayDate || item.date}</time>` : ""}
+            </div>
+            <div class="news-tags">
+                ${(item.tags ?? []).slice(0, 2).map((tag, tagIndex) => `<span class="news-tag news-tag-${tagIndex + 1}">${tag}</span>`).join("")}
+            </div>
             <p>${item.content}</p>
         </button>
     `).join("");
@@ -44,6 +51,7 @@ const setupNewsDetailView = () => {
         if (!item) return;
 
         modalTitle.textContent = item.heading;
+      
         modalText.textContent = item.content;
 
         modal.hidden = false;
@@ -105,6 +113,10 @@ const initializePage = () => {
 
     renderVersion();
     renderNews();
+    const repositoryButton = document.getElementById("repository-btn");
+    if (repositoryButton) {
+        repositoryButton.href = repositoryUrl;
+    }
     setupNewsDetailView();
     setupViewSwitching();
 };
