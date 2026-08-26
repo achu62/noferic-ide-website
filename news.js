@@ -14,4 +14,9 @@ export const news = [
         tags: ["Release"],
         content: "Noferic-IDE v1.7.0 is now available."
     }
+    {
+    heading:"v1.9 is released,with a windows version",
+        date:"25 August 2026",
+        tags:["release"]
+    
 ];
