@@ -13,10 +13,12 @@ export const news = [
         displayDate: "",
         tags: ["Release"],
         content: "Noferic-IDE v1.7.0 is now available."
-    }
+    },
     {
-    heading:"v1.9 is released,with a windows version",
-        date:"25 August 2026",
-        tags:["release"]
-    
+        heading: "v1.9 is released, with a Windows version",
+        date: "2026-08-25",
+        displayDate: "25 Aug 2026",
+        tags: ["Release", "Windows"],
+        content: "Noferic-IDE v1.9 is now available for Windows."
+    }
 ];
