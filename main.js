@@ -8,6 +8,35 @@ const renderVersion = () => {
     if (versionValue) versionValue.textContent = version;
 };
 
+const setupCopyButtons = () => {
+    document.querySelectorAll(".copy-button").forEach((button) => {
+        button.addEventListener("click", async () => {
+            const text = button.dataset.copy || button.previousElementSibling?.textContent || "";
+            const previousText = button.textContent;
+
+            try {
+                await navigator.clipboard.writeText(text);
+                button.textContent = "Copied";
+            } catch (error) {
+                const textarea = document.createElement("textarea");
+                textarea.value = text;
+                textarea.setAttribute("readonly", "");
+                textarea.style.position = "fixed";
+                textarea.style.opacity = "0";
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand("copy");
+                document.body.removeChild(textarea);
+                button.textContent = "Copied";
+            }
+
+            setTimeout(() => {
+                button.textContent = previousText;
+            }, 1400);
+        });
+    });
+};
+
 const renderNews = () => {
     const newsList = document.getElementById("news-list");
     if (!newsList) return;
@@ -69,17 +98,22 @@ const switchView = (viewName) => {
     const homeBtn = document.querySelector('[data-view="home"]');
     const newsBtn = document.querySelector('[data-view="news"]');
 
-    homeBtn.classList.toggle("active", viewName === "home");
-    newsBtn.classList.toggle("active", viewName === "news");
+    if (homeBtn) homeBtn.classList.toggle("active", viewName === "home");
+    if (newsBtn) newsBtn.classList.toggle("active", viewName === "news");
 
-    homeView.style.display = viewName === "home" ? "block" : "none";
-    newsView.style.display = viewName === "news" ? "block" : "none";
+    if (homeView) homeView.style.display = viewName === "home" ? "block" : "none";
+    if (newsView) newsView.style.display = viewName === "news" ? "block" : "none";
 };
 
 const setupViewSwitching = () => {
-    document.querySelectorAll(".nav-btn").forEach(btn => {
-        btn.addEventListener("click", () => switchView(btn.dataset.view));
-    });
+    const homeBtn = document.querySelector('[data-view="home"]');
+    const newsBtn = document.querySelector('[data-view="news"]');
+
+    if (homeBtn && newsBtn) {
+        homeBtn.addEventListener("click", () => switchView("home"));
+        newsBtn.addEventListener("click", () => switchView("news"));
+    }
+
     switchView("home");
 };
 
@@ -89,6 +123,7 @@ const initializePage = () => {
 
     renderVersion();
     renderNews();
+    setupCopyButtons();
 
     const repoBtn = document.getElementById("repository-btn");
     if (repoBtn) repoBtn.href = repositoryUrl;

@@ -15,42 +15,54 @@
     <div class="scanlines"></div>
 
     <header class="topbar">
-        <a class="brand-mark" href="index.html" aria-label="Noferic-IDE home">NOFERIC-IDE<span>_</span></a>
+        <a class="brand-mark" href="index.html" aria-label="Noferic-IDE home">
+            <span class="brand-logo" aria-hidden="true">N</span>
+            <span>NOFERIC-IDE</span><span class="brand-blink">_</span>
+        </a>
         <nav class="topnav" aria-label="Download navigation">
             <a class="nav-btn active" href="download.html">[ download ]</a>
             <a class="nav-btn" href="index.html">[ home ]</a>
         </nav>
-        <a class="top-install" href="https://github.com/achu62/noferic-IDE" target="_blank" rel="noreferrer">
-            <span aria-hidden="true">↗</span> source
-        </a>
     </header>
 
     <main class="page-shell download-page">
         <section class="download-intro">
-            <p class="kicker">DOWNLOAD // 02</p>
-            <h1>Get <span>NOFERIC-IDE</span></h1>
-            <p>Choose your platform and get the latest version from the project.</p>
+            <p class="kicker">download // 02</p>
+            <h1><span>NOFERIC-IDE</span></h1>
+            <p>Choose your platform and install the build that fits your setup.</p>
         </section>
 
         <section class="download-options" aria-label="Download options">
-            <article class="download-card">
-                <p class="download-card-label">01 // Linux</p>
-                <h2>Linux AppImage</h2>
-                <p>Download the latest Linux build from your terminal.</p>
-                <code class="download-command">curl -O https://raw.githubusercontent.com/achu62/noferic-IDE/refs/heads/main/noferic-install.sh && sh ./noferic-install.sh</code>
+            <article class="download-card linux-card">
+                <div class="card-topline">
+                    <p class="download-card-label">01 // Linux</p>
+                    <span class="platform-badge">TUX</span>
+                </div>
+                <h2>Linux install</h2>
+                <p>Use the latest install command below and keep your workflow moving.</p>
+                <code class="download-command" id="linux-command">curl -O https://raw.githubusercontent.com/achu62/noferic-IDE/refs/heads/main/noferic-install.sh && sh ./noferic-install.sh</code>
             </article>
 
-            <article class="download-card">
-                <p class="download-card-label">02 // Windows</p>
-                <h2>Get the Windows release</h2>
-                <p>Open the releases page to choose the latest Windows download.</p>
-                <a class="download-link" href="https://github.com/achu62/noferic-IDE/releases" target="_blank" rel="noreferrer">
-                    <span aria-hidden="true">↗</span> open releases
-                </a>
+            <article class="download-card windows-card">
+                <div class="card-topline">
+                    <p class="download-card-label">02 // Windows</p>
+                    <span class="platform-badge">WIN</span>
+                </div>
+                <h2>Windows release</h2>
+                <p>Open the GitHub releases page to grab the latest Windows package.</p>
+                <a class="download-link" href="https://github.com/achu62/noferic-IDE/releases" target="_blank" rel="noreferrer">github.com/achu62/noferic-IDE/releases</a>
             </article>
         </section>
 
-        <p class="download-note">NOFERIC-IDE // open source // github.com/achu62/noferic-IDE</p>
+        <div class="download-footer">
+            <div class="footer-logos">
+                <span>GitHub</span>
+                <span>Linux</span>
+                <span>Windows</span>
+                <span>Web</span>
+            </div>
+            <p class="download-note">NOFERIC-IDE // open source // github.com/achu62/noferic-IDE</p>
+        </div>
     </main>
 </body>
 </html>

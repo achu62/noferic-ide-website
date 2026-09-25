@@ -16,45 +16,42 @@
     <div class="scanlines"></div>
 
     <header class="topbar">
-        <a class="brand-mark" href="#home" aria-label="Noferic-IDE home">NOFERIC-IDE<span>_</span></a>
+        <a class="brand-mark" href="#home" aria-label="Noferic-IDE home">
+            <span class="brand-logo" aria-hidden="true">N</span>
+            <span>NOFERIC-IDE</span><span class="brand-blink">_</span>
+        </a>
 
         <nav class="topnav" aria-label="Primary navigation">
-            <button class="nav-btn active" data-view="home" type="button">[ home ]</button>
-            <button class="nav-btn" data-view="news" type="button">[ news ]</button>
+            <a class="nav-btn active" href="index.html">[ home ]</a>
+            <a class="nav-btn" href="download.html">[ download ]</a>
         </nav>
-
-        <a href="download.html" class="top-install">
-            <span aria-hidden="true">↓</span> get release
-        </a>
     </header>
 
     <main class="page-shell">
         <!-- HOME -->
         <section id="home-view" class="view-section">
             <div class="hero">
-                <p class="kicker">OPEN-SOURCE WEB IDE <span>// 01</span></p>
+                <p class="kicker">open-source web ide</p>
 
-                <h1 class="wordmark">NOFERIC<span>-IDE</span><span class="wordmark-glow" aria-hidden="true">NOFERIC-IDE</span></h1>
-                <p class="tagline">An IDE for Web Development Made on Web Technologies<br><span class="prompt">&gt; edit anywhere<span class="cursor">_</span></span></p>
+                <h1 class="wordmark" aria-label="NOFERIC-IDE">
+                    <span class="wordmark-core">NOFERIC</span>
+                    <span class="wordmark-split">IDE</span>
+                    <span class="wordmark-glow" aria-hidden="true">NOFERIC IDE</span>
+                </h1>
 
-                <div class="hero-actions">
-                    <a href="download.html" class="btn primary">
-                        <span aria-hidden="true">↓</span> download latest
-                    </a>
-                    <a id="repository-btn" href="https://github.com/achu62/noferic-IDE" class="btn secondary" target="_blank" rel="noreferrer">
-                        <span aria-hidden="true">↗</span> source code
-                    </a>
+                <p class="tagline">Web-native workflows for building fast, focused, and beautifully on the browser.</p>
+
+                <div class="title-stack">
+                    <h2>design the space</h2>
+                    <h2>ship the work</h2>
                 </div>
 
-                <p class="version-line">
-                    <span class="status-dot"></span> build <span id="version-value">loading...</span> 
-                </p>
-
-                <div class="preview-card">
-                    <div class="window-bar"><span></span><span></span><span></span><b>noferic://workspace</b><i>● REC</i></div>
-                    <img id="image-space" alt="Noferic-IDE preview">
+                <div class="showcase-shell">
+                    <div class="preview-card">
+                        <div class="window-bar"><span></span><span></span><span></span><b>noferic://workspace</b><i>● REC</i></div>
+                        <img id="image-space" alt="Noferic-IDE preview">
+                    </div>
                 </div>
-
             </div>
         </section>
 
