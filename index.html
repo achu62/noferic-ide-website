@@ -1,85 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NOFERIC-IDE // web IDE</title>
+    <title>NOFERIC-IDE | A focused web IDE</title>
+    <meta name="description" content="A focused, open-source web IDE built with web technologies.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="crt-noise"></div>
     <div class="scanlines"></div>
 
-    <header class="topbar">
-        <a class="brand-mark" href="#home" aria-label="Noferic-IDE home">
-            <span class="brand-logo" aria-hidden="true">N</span>
-            <span>NOFERIC-IDE</span><span class="brand-blink">_</span>
-        </a>
+    </a>
 
-        <nav class="topnav" aria-label="Primary navigation">
-            <a class="nav-btn active" href="index.html">[ home ]</a>
-            <a class="nav-btn" href="download.html">[ download ]</a>
-        </nav>
-    </header>
+    <a class="nav-btn active" href="index.html">[ home ]</a>
+    <a class="nav-btn" href="download.html">[ download ]</a>
+    </nav>
 
     <main class="page-shell">
         <!-- HOME -->
         <section id="home-view" class="view-section">
             <div class="hero">
-                <p class="kicker">open-source web ide</p>
+                <section id="home-view" class="hero" aria-labelledby="hero-title">
+                    <p class="kicker">Open-source web IDE</p>
+                    <h1 id="hero-title">NOFERIC-<br>IDE</h1>
+                    <p class="tagline">An IDE for web development</p>
 
-                <h1 class="wordmark" aria-label="NOFERIC-IDE">
-                    <span class="wordmark-core">NOFERIC</span>
-                    <span class="wordmark-split">IDE</span>
-                    <span class="wordmark-glow" aria-hidden="true">NOFERIC IDE</span>
-                </h1>
-
-                <p class="tagline">An web IDE built with Web technologies.</p>
-
-                <div class="title-stack">
-                    <h2>design the space</h2>
-                    <h2>ship the work</h2>
-                </div>
-
-                <div class="showcase-shell">
-                    <div class="preview-card">
-                        <div class="window-bar"><span></span><span></span><span></span><b>noferic://workspace</b><i>● REC</i></div>
-                        <img id="image-space" alt="Noferic-IDE preview">
+                    <div class="hero-actions">
+                        <a class="action-button action-button-primary" href="download.html">Get Noferic IDE</a>
+                        <a class="action-button action-button-secondary" href="https://github.com/achu62/noferic-IDE"
+                            target="_blank" rel="noreferrer">View source</a>
                     </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- NEWS -->
-        <section id="news-view" class="view-section" style="display: none;">
-            <div class="news-shell">
-                <div class="news-header">
-                    <p class="kicker">// transmission log</p>
-                    <h2>News<span class="cursor">_</span></h2>
-                </div>
-                <div id="news-list" class="news-list"></div>
+                    <figure class="showcase-shell">
+                        <img id="image-space" alt="Noferic IDE workspace shown in the browser">
+                    </figure>
+                    <section id="news-view" class="view-section" style="display: none;">
+                        <div class="news-shell">
+                            <button class="news-modal-close" aria-label="Close">×</button>
+                            <div class="news-modal-body">
+                                <p class="kicker">News detail</p>
+                                <h3 id="news-modal-title"></h3>
+                                <p id="news-modal-text"></p>
+                            </div>
+                        </div>
             </div>
-        </section>
-    </main>
 
-    <!-- NEWS MODAL -->
-    <div id="news-modal" class="news-modal" hidden>
-        <div class="news-modal-backdrop"></div>
-        <div class="news-modal-content" role="dialog" aria-modal="true">
-            <button class="news-modal-close" aria-label="Close">×</button>
-            <div class="news-modal-body">
-                <p class="kicker">News detail</p>
-                <h3 id="news-modal-title"></h3>
-                <p id="news-modal-text"></p>
-            </div>
-        </div>
-    </div>
-
-    <script type="module" src="main.js"></script>
+            <script type="module" src="main.js"></script>
 </body>
+
 </html>
